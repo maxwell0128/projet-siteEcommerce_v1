@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
+use App\Models\Genre;
+use App\Models\Produits;
 use Illuminate\Http\Request;
 
 class VueController extends Controller
@@ -22,9 +25,21 @@ class VueController extends Controller
     {
         return view('contact');
     }
-    // contact
+    /****achat****/
+    //fonction pour afficher les produits pour etre commander
     public function achat()
     {
-        return view('achat');
+        $categories = Categorie::all();
+        $genres = Genre::all();
+        $produits = Produits::paginate(30);
+        return view('achat.achat',compact('categories','genres','produits'));
+    }
+    //fonction pour afficher plus de detaille sur le produit
+    public function achatdetaile ($id){
+        $produit = Produits::find($id);
+        $categories = Categorie::all();
+        $othercategories = $categories->where('id', '==', $produit->id_category);
+        return view('achat.achat_voir',compact('produit','othercategories'));
+
     }
 }
