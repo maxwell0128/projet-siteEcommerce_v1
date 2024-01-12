@@ -20,3 +20,4 @@
 </div>
 <script src="assets/js/categorie.js"></script>
 @endsection
+

@@ -32,7 +32,30 @@
                 <tr>
                     <td>{{ $ide }}</td>
                     <td>{{ $produit->name_produit }}</td>
-                    <td>{{ $produit->description }}</td>
+                    <td>
+                        {{ $produit->shortDescription() }}
+                        @if (str_word_count($produit->description) > 20)
+                            <button class="btn btn-link btn-sm toggle-more" data-toggle="modal" data-target="#modal-{{ $produit->id }}">Plus</button>
+                            <div class="modal fade" id="modal-{{ $produit->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ $produit->id }}-label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-{{ $produit->id }}-label">Description complète</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">x</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{ $produit->description }}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Fermer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    </td>
                     <td>{{ $produit->prix }}</td>
                     <td>
                         @if($produit->photo1)
@@ -52,8 +75,23 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $produits->links() }}
+        <div class="" style="height: 100px;">
+            {{ $produits->links() }}
+        </div>
     @else
         <p>Aucun produit disponible.</p>
     @endif
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggleButtons = document.querySelectorAll('.toggle-more');
+
+        toggleButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var targetModalId = this.getAttribute('data-target').replace('#', '');
+                var targetModal = new bootstrap.Modal(document.getElementById(targetModalId));
+                targetModal.show();
+            });
+        });
+    });
+</script>

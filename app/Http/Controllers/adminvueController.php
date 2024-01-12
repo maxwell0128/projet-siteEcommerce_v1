@@ -144,7 +144,7 @@ class adminvueController extends Controller
     }
     //fonction pour afficher la liste des produits
     public function produit_list() {
-        $produits = Produits::with('Categorie','Genre')->paginate(15);
+        $produits = Produits::with('Categorie','Genre')->paginate(5);
         return view('admin_vue.produit.produit_list',compact('produits'));
     }
     //fonction allez vers la modifier les produits

@@ -34,8 +34,6 @@
                                         <a href="#">
                                             @if($produit->photo1 !='image null')
                                                 <img class="card-img rounded-0 img-fluid" src="{{ asset('storage/' . $produit->photo1) }}" alt="Image du produit" style="width: 100px; height: 100px;">
-                                            @else
-                                                <p>No images available.</p>
                                             @endif
                                         </a>
                                     </div>
@@ -43,8 +41,6 @@
                                         <a href="#">
                                             @if($produit->photo2 !='image null')
                                                 <img class="card-img rounded-0 img-fluid" src="{{ asset('storage/' . $produit->photo2) }}" alt="Image du produit" style="width: 100px; height: 100px;">
-                                            @else
-                                                <p>No images available.</p>
                                             @endif
                                         </a>
                                     </div>
@@ -52,8 +48,6 @@
                                         <a href="#">
                                             @if($produit->photo3 !='image null')
                                                 <img class="card-img rounded-0 img-fluid" src="{{ asset('storage/' . $produit->photo3) }}" alt="Image du produit" style="width: 100px; height: 100px;">
-                                            @else
-                                                <p>No images available.</p>
                                             @endif
                                         </a>
                                     </div>
@@ -68,8 +62,6 @@
                                         <a href="#">
                                             @if($produit->photo4 !='image null')
                                                 <img class="card-img rounded-0 img-fluid" src="{{ asset('storage/' . $produit->photo4) }}" alt="Image du produit" style="width: 100px; height: 100px;">
-                                            @else
-                                                <p>No images available.</p>
                                             @endif
                                         </a>
                                     </div>
@@ -77,8 +69,6 @@
                                         <a href="#">
                                             @if($produit->photo5 !='image null')
                                                 <img class="card-img rounded-0 img-fluid" src="{{ asset('storage/' . $produit->photo5) }}" alt="Image du produit" style="width: 100px; height: 100px;">
-                                            @else
-                                                <p>No images available.</p>
                                             @endif
                                         </a>
                                     </div>

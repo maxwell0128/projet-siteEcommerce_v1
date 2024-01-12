@@ -26,4 +26,8 @@ class Produits extends Model
     public function Genre(){
         return $this->belongsTo(Genre::class, 'id_genre', 'id');
     }
+    public function shortDescription()
+    {
+        return implode(' ', array_slice(str_word_count($this->description, 1), 0, 20));
+    }
 }
