@@ -57,7 +57,7 @@ class adminvueController extends Controller
     }
     //fonction pour afficher la liste des categories
     public function categorie_list() {
-        $categories = Categorie::paginate(15);
+        $categories = Categorie::paginate(7);
         return view('admin_vue.categorie.categorie_list',compact('categories'));
     }
     //fonction allez vers la modifier les categories

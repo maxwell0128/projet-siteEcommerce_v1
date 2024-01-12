@@ -20,7 +20,7 @@ Route::get('/about', [VueController::class, 'about'])->name('app_about');
 /**achat**/
 //route afficher les produit a acheter
 Route::get('/achat', [VueController::class, 'achat'])->name('app_achat');
-Route::get('achat/{id}', [VueController::class, 'achatdetaile']);
+Route::get('/achat_detail/{id}', [VueController::class, 'achatdetaile']);
 
 Route::get('/contact', [VueController::class, 'contact'])->name('app_contact');
 

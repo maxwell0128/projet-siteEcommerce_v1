@@ -1,4 +1,4 @@
-@extends('parent')
+@extends('client.parent')
 @section('tittle', 'accueil')
 @section('content')
 <h1>home</h1>

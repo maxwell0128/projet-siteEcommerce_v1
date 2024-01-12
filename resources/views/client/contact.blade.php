@@ -1,4 +1,4 @@
-@extends('parent')
+@extends('client.parent')
 @section('tittle', 'contact')
 @section('content')
 <h1>contact</h1>

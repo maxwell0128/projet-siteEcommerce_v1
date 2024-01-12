@@ -1,4 +1,4 @@
-@extends('parent')
+@extends('client.parent')
 @section('tittle', 'achat')
 @section('content')
 <!-- Start Content -->
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     @foreach ($produits as $produit)
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
@@ -66,13 +66,13 @@
                             @endif
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white mt-2" href="/achat/{{ $produit->id }}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="/achat_detail/{{ $produit->id }}"><i class="far fa-eye"></i></a></li>
                                     <li><a class="btn btn-success text-white mt-2" href="/panier/{{ $produit->id }}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="/achat/{{ $produit->id}}" class="h3 text-decoration-none"><h5>{{ $produit->name_produit }}</h5></a>
+                            <a href="/achat_detail/{{ $produit->id }}" class="h3 text-decoration-none"><h5>{{ $produit->name_produit }}</h5></a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>{{ $produit->description}}</li>
                             </ul>

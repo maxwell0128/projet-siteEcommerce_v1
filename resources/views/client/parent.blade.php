@@ -19,13 +19,13 @@
     </head>
     <body class="antialiased">
         {{----bar de navigation---}}
-        @include('nav')
+        @include('client.nav')
 
         {{----corps de mon site ---}}
         @yield('content')
 
         {{----bar de navigation---}}
-        @include('footer')
+        @include('client.footer')
 
         <!-- Start Script -->
         <script src="assets/js/jquery-1.11.0.min.js"></script>

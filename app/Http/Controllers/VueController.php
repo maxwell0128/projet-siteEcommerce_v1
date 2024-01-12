@@ -13,17 +13,17 @@ class VueController extends Controller
     // accueil
     public function accueil()
     {
-        return view('index');
+        return view('client.index');
     }
     // about
     public function about()
     {
-        return view('about');
+        return view('client.about');
     }
     // contact
     public function contact()
     {
-        return view('contact');
+        return view('client.contact');
     }
     /****achat****/
     //fonction pour afficher les produits pour etre commander
@@ -32,14 +32,13 @@ class VueController extends Controller
         $categories = Categorie::all();
         $genres = Genre::all();
         $produits = Produits::paginate(30);
-        return view('achat.achat',compact('categories','genres','produits'));
+        return view('client.achat.achat',compact('categories','genres','produits'));
     }
     //fonction pour afficher plus de detaille sur le produit
     public function achatdetaile ($id){
         $produit = Produits::find($id);
-        $categories = Categorie::all();
-        $othercategories = $categories->where('id', '==', $produit->id_category);
-        return view('achat.achat_voir',compact('produit','othercategories'));
+        return view('client.achat.produits',compact('produit'));
 
     }
+
 }
