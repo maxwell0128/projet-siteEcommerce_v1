@@ -1,6 +1,3 @@
-@extends('parent')
-@section('tittle', 'achat_voir')
-@section('content')
 <div class="container pb-5">
     <div class="row">
         <div class="col-lg-5 mt-5">
@@ -192,7 +189,6 @@
     </div>
 </div>
 <!-- Close Content -->
-
 <!-- Start Article -->
 <div class="py-5">
     <div class="container">
@@ -666,5 +662,3 @@
 </div>
 <!-- End Article -->
 
-
-@endsection
